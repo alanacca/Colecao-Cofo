@@ -50,7 +50,11 @@ float **multMat(int n,int m,int p, int f,float **Ma,float **Mb){//FAZ A MULTIPLI
 retorna um vetor com os elementos da diagonal principal*/
 float *DiagPrin(int n,int m, float **Ma)//MOSTRA A DIAGONAL PRINCIPAL DA MATRIZ
 {
-    float *vetDiag = (float*)malloc(sizeof(float)*n);
+    nDiag = n;
+    if(nDiag>m){
+        nDiag=m;
+    }
+    float *vetDiag = (float*)malloc(sizeof(float)*nDiag);
     if(vetDiag == NULL){
         printf("vetor nulo");
     }
